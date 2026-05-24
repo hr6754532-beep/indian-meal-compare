@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriWorld | The Great Culinary Analysis</title>
+    
+    <!-- Tailwind CSS for Professional Layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --indian-gradient: linear-gradient(135deg, #ff9933, #ffffff, #138813);
+            --foreign-gradient: linear-gradient(135deg, #00c6ff, #0072ff);
+            --dark-royal: #0f172a;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #05070a;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        h1, h2, .majestic-font {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* 3D Glassmorphism Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animated Gradient Background */
+        .hero-bg {
+            background: radial-gradient(circle at top right, #ff993333, transparent),
+                        radial-gradient(circle at bottom left, #0072ff33, transparent),
+                        #05070a;
+        }
+
+        /* 3D Floating Animation */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #05070a; }
+        ::-webkit-scrollbar-thumb { background: #ff9933; border-radius: 10px; }
+
+        .nutrient-bar {
+            height: 10px;
+            border-radius: 5px;
+            background: #334155;
+            overflow: hidden;
+        }
+        .fill-indian { background: linear-gradient(90deg, #ff9933, #facc15); }
+        .fill-foreign { background: linear-gradient(90deg, #00c6ff, #0072ff); }
+    </style>
+</head>
+<body class="hero-bg">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-md border-b border-white/10">
+        <div class="text-2xl font-bold majestic-font tracking-widest">
+            NUTRI<span class="text-orange-500">WORLD</span>
+        </div>
+        <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest">
+            <a href="#home" class="hover:text-orange-500 transition">Home</a>
+            <a href="#indian" class="hover:text-orange-500 transition">Indian Diet</a>
+            <a href="#foreign" class="hover:text-orange-500 transition">Global Diet</a>
+            <a href="#analysis" class="bg-orange-600 px-4 py-2 rounded-full hover:bg-orange-400 transition">The Verdict</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center text-center px-4">
+        <div class="absolute w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-20 left-10 w-64 h-64 bg-orange-600 rounded-full filter blur-[120px] opacity-30 floating"></div>
+            <div class="absolute bottom-20 right-10 w-64 h-64 bg-blue-600 rounded-full filter blur-[120px] opacity-30 floating" style="animation-delay: 1.5s;"></div>
+        </div>
+        
+        <div data-aos="zoom-in" class="max-w-4xl">
+            <h1 class="text-6xl md:text-8xl font-bold mb-6 leading-tight">
+                The <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-200">Nutritional</span> <br>Divide
+            </h1>
+            <p class="text-xl text-gray-400 mb-10 font-light tracking-wide">
+                An exhaustive professional analysis comparing the ancestral richness of Indian meals against the nutrient-dense standards of Global cuisines.
+            </p>
+            <a href="#analysis" class="px-10 py-4 bg-gradient-to-r from-orange-600 to-yellow-500 rounded-full font-bold text-lg uppercase tracking-widest hover:scale-110 transition-transform inline-block shadow-lg shadow-orange-600/20">
+                Explore the Science <i class="fa-solid fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Indian Food Section -->
+    <section id="indian" class="py-20 px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-5xl font-bold mb-4">Indian Culinary Heritage</h2>
+            <div class="h-1 w-24 bg-orange-500 mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" class="relative group">
+                <img src="https://images.unsplash.com/photo-1585951325811-33975311970b?auto=format&fit=crop&w=800" 
+                     class="rounded-3xl shadow-2xl group-hover:scale-105 transition duration-500" alt="Indian Meal">
+                <div class="absolute -bottom-6 -right-6 glass-card p-6 rounded-2xl floating">
+                    <p class="text-orange-400 font-bold">Saffron & Spice</p>
+                    <p class="text-xs">Traditional Palate</p>
+                </div>
+            </div>
+            <div data-aos="fade-left" class="space-y-6">
+                <h3 class="text-3xl font-bold text-orange-400">The Flavor Powerhouse</h3>
+                <p class="text-gray-300 leading-relaxed text-lg">
+                    Indian cuisine is a masterclass in flavor. Using a complex array of spices (turmeric, cumin, cardamom), it provides incredible antioxidant properties and digestive benefits.
+                </p>
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-orange-500">
+                    <h4 class="font-bold text-xl mb-2">The Critical Nutrient Gap</h4>
+                    <p class="text-gray-400">
+                        Despite the taste, the modern Indian diet is often <span class="text-white font-bold">Carbohydrate-Dominant</span>. Over-reliance on white rice, refined flour (maida), and heavy frying leads to a lower density of bioavailable proteins and Omega-3s compared to global health standards.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Foreign Food Section -->
+    <section id="foreign" class="py-20 px-8 max-w-7xl mx-auto bg-blue-900/10 rounded-[50px]">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-5xl font-bold mb-4">Global Nutritional Standards</h2>
+            <div class="h-1 w-24 bg-blue-500 mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" class="order-2 md:order-1 space-y-6">
+                <h3 class="text-3xl font-bold text-blue-400">Precision Nutrition</h3>
+                <p class="text-gray-300 leading-relaxed text-lg">
+                    Foreign diets—specifically the Mediterranean (Greece/Italy) and East Asian (Japan/Korea) models—prioritize <span class="text-white font-bold">Nutrient Density</span> over caloric volume.
+                </p>
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-blue-500">
+                    <h4 class="font-bold text-xl mb-2">Why they rank higher?</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li><i class="fa-solid fa-check text-blue-400 mr-2"></i> Lean Protein focus (Grilled Fish, Tofu).</li>
+                        <li><i class="fa-solid fa-check text-blue-400 mr-2"></i> Cold-pressed oils (Olive Oil, Avocado).</li>
+                        <li><i class="fa-solid fa-check text-blue-400 mr-2"></i> Raw/Steamed prep preserving vitamins.</li>
+                    </ul>
+                </div>
+            </div>
+            <div data-aos="fade-left" class="order-1 md:order-2 relative group">
+                <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800" 
+                     class="rounded-3xl shadow-2xl group-hover:scale-105 transition duration-500" alt="Foreign Meal">
+                <div class="absolute -bottom-6 -right-6 glass-card p-6 rounded-2xl floating">
+                    <p class="text-blue-400 font-bold">Omega & Greens</p>
+                    <p class="text-xs">Global Standards</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Analysis Section -->
+    <section id="analysis" class="py-20 px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-5xl font-bold mb-4">The Nutritional Verdict</h2>
+            <p class="text-gray-400">Comparing Nutrient Density per 100g of typical meal portions</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Protein Analysis -->
+            <div class="glass-card p-8 rounded-3xl" data-aos="flip-left">
+                <div class="text-orange-500 text-4xl mb-4"><i class="fa-solid fa-dumbbell"></i></div>
+                <h3 class="text-2xl font-bold mb-6">Protein Density</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span>Indian (Dal/Rice)</span><span>40%</span></div>
+                        <div class="nutrient-bar"><div class="fill-indian h-full" style="width: 40%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span>Foreign (Salmon/Quinoa)</span><span>85%</span></div>
+                        <div class="nutrient-bar"><div class="fill-foreign h-full" style="width: 85%"></div></div>
+                    </div>
+                </div>
+                <p class="mt-6 text-xs text-gray-500">Analysis: Indian plant proteins are often incomplete without specific grain pairing.</p>
+            </div>
+
+            <!-- Vitamins Analysis -->
+            <div class="glass-card p-8 rounded-3xl" data-aos="flip-left" data-aos-delay="200">
+                <div class="text-blue-500 text-4xl mb-4"><i class="fa-solid fa-leaf"></i></div>
+                <h3 class="text-2xl font-bold mb-6">Micronutrients</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span>Indian (Sautéed Veg)</span><span>50%</span></div>
+                        <div class="nutrient-bar"><div class="fill-indian h-full" style="width: 50%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span>Foreign (Fresh Salads)</span><span>90%</span></div>
+                        <div class="nutrient-bar"><div class="fill-foreign h-full" style="width: 90%"></div></div>
+                    </div>
+                </div>
+                <p class="mt-6 text-xs text-gray-500">Analysis: High-heat cooking in Indian curries destroys heat-sensitive vitamins (C, B).</p>
+            </div>
+
+            <!-- Healthy Fats Analysis -->
+            <div class="glass-card p-8 rounded-3xl" data-aos="flip-left" data-aos-delay="400">
+                <div class="text-yellow-500 text-4xl mb-4"><i class="fa-solid fa-droplet"></i></div>
+                <h3 class="text-2xl font-bold mb-6">Healthy Fats</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span>Indian (Ghee/Butter)</span><span>30%</span></div>
+                        <div class="nutrient-bar"><div class="fill-indian h-full" style="width: 30%"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-sm mb-1"><span>Foreign (Avocado/Olive)</span><span>95%</span></div>
+                        <div class="nutrient-bar"><div class="fill-foreign h-full" style="width: 95%"></div></div>
+                    </div>
+                </div>
+                <p class="mt-6 text-xs text-gray-500">Analysis: Indian fats are primarily saturated; Global diets favor unsaturated Omega-3s.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/10 text-gray-500 text-sm">
+        <p>&copy; 2023 <span class="text-orange-500 font-bold">NUTRIWORLD</span> Analysis Group. All rights reserved.</p>
+    </footer>
+
+    <!-- AOS Scripts for Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
